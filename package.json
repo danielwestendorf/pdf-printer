@@ -1,0 +1,24 @@
+{
+  "name": "pdf-printer",
+  "version": "0.0.1",
+  "description": "Heroku deployment of a pdf-bot",
+  "scripts": {
+    "start": "pdf-bot -c ./pdf-printer.config.js api"
+  },
+  "dependencies": {
+    "pdf-bot": "git://github.com/danielwestendorf/pdf-bot.git"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielwestendorf/pdf-printer"
+  },
+  "keywords": [
+    "pdf",
+    "chrome",
+    "service",
+    "heroku",
+    "pdf-bot"
+  ],
+  "license": "MIT"
+}

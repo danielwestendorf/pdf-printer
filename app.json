@@ -1,0 +1,69 @@
+{
+  "name": "PDF Printer service",
+  "description": "Heroku deployment of a pdf-bot",
+  "keywords": [
+    "pdf",
+    "chrome",
+    "service",
+    "heroku",
+    "pdf-bot"
+  ],
+  "scripts": {
+    "postdeploy": "pdf-bot db:migrate -c pdf-bot.config.js"
+  },
+  "repository": "https://github.com/danielwestendorf/pdf-printer",
+  "env": {
+    "API_TOKEN": {
+      "description": "A secret key for accessing the printer API.",
+      "generator": "secret"
+    },
+    "AWS_S3_BUCKET": {
+      "description": "AWS S3 Bucket Name",
+      "value": "REPLACE_ME"
+    },
+    "AWS_S3_ACCESS_KEY_ID": {
+      "description": "AWS S3 Access Key ID",
+      "value": "REPLACE_ME"
+    },
+    "AWS_S3_SECRET_ACCESS_KEY": {
+      "description": "AWS S3 Secret Access Key",
+      "value": "REPLACE_ME"
+    },
+    "AWS_S3_REGION": {
+      "description": "AWS S3 Bucket Region",
+      "value": "REPLACE_ME"
+    },
+    "WEBHOOK_SECRET": {
+      "description": "Secret to use when sending webhooks",
+      "value": "REPLACE_ME"
+    },
+    "WEBHOOK_URL": {
+      "description": "URL to send webhooks to when generation is complete",
+      "value": "http://example.com/webhooks/pdf"
+    },
+    "PARALLELISM": {
+      "description": "How many parallel renders per worker",
+      "value": "4"
+    },
+    "POLL_INTERVAL": {
+      "description": "Time interval, in ms, to check the database for new jobs to process",
+      "value": "100"
+    },
+    "NODE_ENV": {
+      "description": "node env",
+      "value": "production"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "https://github.com/kwlockwo/heroku-buildpack-google-chrome",
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ]
+}
