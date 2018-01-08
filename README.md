@@ -24,7 +24,7 @@ Set the Heroku Config Vars
 | POLL_INTERVAL              | 100                | Time interval, in ms, to check the database for new jobs to process     |
 | RENDER_EVENT               | 'DOMContentLoaded' | Event to signify the page is ready for pdf capture                      |
 | RENDER_EVENT_ELEMENT       | 'body'             | Element which receive the render event                                  |
-| RENDER_EVENT_TIMEOUT       | 1                  | Time, in ms, to wait for the render event before forcing capture anyway |
+| RENDER_EVENT_TIMEOUT       | 2000               | Time, in ms, to wait for the render event before forcing capture anyway |
 
 
 Set `DEBUG` Config var to `pdf:*` to get debugged output.
