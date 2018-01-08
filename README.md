@@ -1,11 +1,14 @@
 # PDF Printer Service
 ## Heroku deployment of a pdf-bot
-This project implements a one-click setup of [pdf-bot](https://github.com/esbenp/pdf-bot). HTML PDF rendering with Google Chrome, requested with a URL over HTTP, delivered when complete with a webhook. Stores the PDF's on Amazon S3.
-
-⚠️ This project is dependent on a fork of pdf-bot because of [this PR](https://github.com/esbenp/pdf-bot/pull/16). Once it's merged, the dependency should be able to point directly to `pdf-bot`.
+This project implements a one-click setup of [pdf-bot](https://github.com/esbenp/pdf-bot). HTML PDF rendering with Google Chrome, requested with a URL over HTTP, delivered when complete with a webhook, and stores the PDF's on Amazon S3.
 
 ### Deployment
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+1. Click the deployment button to get the system running on Heroku
+2. Configure the Config Vars below
+3. Turn on the configured worker dyno
+4. Submit a job to be generated
 
 ### Configuration
 Set the Heroku Config Vars
