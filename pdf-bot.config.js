@@ -9,7 +9,7 @@ const decaySchedule  = [
   1000 * 60 * 60 // 1 hour
 ];
 
-module.exports = {
+const config = {
   api: {
     port: process.env.PORT,
     token: process.env.API_TOKEN
@@ -38,12 +38,7 @@ module.exports = {
     ssl: true
   }),
   generator: {
-    chromePath: process.env.GOOGLE_CHROME_SHIM,
-    completionTrigger: new htmlPdf.CompletionTrigger.Event(
-      process.env.RENDER_EVENT,
-      process.env.RENDER_EVENT_ELEMENT,
-      process.env.RENDER_EVENT_TIMEOUT
-    )
+    chromePath: process.env.GOOGLE_CHROME_SHIM
   },
   webhook: {
     secret: process.env.WEBHOOK_SECRET,
@@ -51,3 +46,15 @@ module.exports = {
   },
   storagePath: './storage'
 }
+
+if (process.env.RENDER_EVENT) {
+  config.generator.completionTrigger = new htmlPdf.CompletionTrigger.Event(
+    process.env.RENDER_EVENT,
+    process.env.RENDER_EVENT_ELEMENT,
+    process.env.RENDER_EVENT_TIMEOUT
+  )
+} else if (process.env.RENDER_TIMER) {
+  config.generator.completionTrigger = new htmlPdf.CompletionTrigger.Timer(process.env.RENDER_TIMER)
+}
+
+module.exports = config;

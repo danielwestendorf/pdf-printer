@@ -22,9 +22,10 @@ Set the Heroku Config Vars
 | WEBHOOK_URL                | REPLACE_ME         | URL to send webhooks to when generation is complete                     |
 | PARALLELISM                | 4                  | How many parallel renders per worker                                    |
 | POLL_INTERVAL              | 100                | Time interval, in ms, to check the database for new jobs to process     |
-| RENDER_EVENT               | 'DOMContentLoaded' | Event to signify the page is ready for pdf capture                      |
-| RENDER_EVENT_ELEMENT       | 'body'             | Element which receive the render event                                  |
-| RENDER_EVENT_TIMEOUT       | 2000               | Time, in ms, to wait for the render event before forcing capture anyway |
+| RENDER_TIMER               | 1000               | Time, in ms, to wait before pdf capture                                 |
+| RENDER_EVENT               | optional           | Event to signify the page is ready for pdf capture                      |
+| RENDER_EVENT_ELEMENT       | optional           | Element which receive the render event                                  |
+| RENDER_EVENT_TIMEOUT       | optional           | Time, in ms, to wait for the render event                               |
 
 
 Set `DEBUG` Config var to `pdf:*` to get debugged output.
