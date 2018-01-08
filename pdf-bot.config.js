@@ -1,3 +1,4 @@
+const htmlPdf        = require('html-pdf-chrome');
 const createS3Config = require('pdf-bot/src/storage/s3');
 const pgsql          = require('pdf-bot/src/db/pgsql');
 const decaySchedule  = [
@@ -37,7 +38,12 @@ module.exports = {
     ssl: true
   }),
   generator: {
-    chromePath: process.env.GOOGLE_CHROME_SHIM
+    chromePath: process.env.GOOGLE_CHROME_SHIM,
+    completionTrigger: new htmlPdf.CompletionTrigger.Event(
+      process.env.RENDER_EVENT,
+      process.env.RENDER_EVENT_ELEMENT,
+      process.env.RENDER_EVENT_TIMEOUT
+    )
   },
   webhook: {
     secret: process.env.WEBHOOK_SECRET,
