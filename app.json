@@ -59,7 +59,7 @@
     },
     "RENDER_EVENT_TIMEOUT": {
       "description": "Time, in ms, to wait for the render event before forcing capture anyway",
-      "value": "1"
+      "value": "2000"
     },
     "NODE_ENV": {
       "description": "node env",
