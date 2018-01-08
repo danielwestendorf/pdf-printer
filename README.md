@@ -11,16 +11,20 @@ This project implements a one-click setup of [pdf-bot](https://github.com/esbenp
 Set the Heroku Config Vars
 
 
-| ENV Variable               | Default Value | Description                                         |
-| -------------              |:-------------:| -----                                               |
-| API_TOKEN                  | REPLACE_ME    | A secret key for accessing the printer API.         |
-| AWS_S3_BUCKET              | REPLACE_ME    | AWS S3 Bucket Name                                  |
-| AWS_S3_ACCESS_KEY_ID       | REPLACE_ME    | AWS S3 Access Key ID                                |
-| AWS_S3_SECRET_ACCESS_KEY   | REPLACE_ME    | AWS S3 Secret Access Key                            |
-| AWS_S3_REGION              | REPLACE_ME    | AWS S3 Bucket Region                                |
-| WEBHOOK_SECRET             | REPLACE_ME    | Secret to use when sending webhooks                 |
-| WEBHOOK_URL                | REPLACE_ME    | URL to send webhooks to when generation is complete |
-| PARALLELISM                | 4             | How many parallel renders per worker                |
-| POLL_INTERVAL              | 100           | Time interval, in ms, to check the database for new jobs to process |
+| ENV Variable               | Default Value      | Description                                                             |
+| -------------              |:-------------:     | -----                                                                   |
+| API_TOKEN                  | REPLACE_ME         | A secret key for accessing the printer API.                             |
+| AWS_S3_BUCKET              | REPLACE_ME         | AWS S3 Bucket Name                                                      |
+| AWS_S3_ACCESS_KEY_ID       | REPLACE_ME         | AWS S3 Access Key ID                                                    |
+| AWS_S3_SECRET_ACCESS_KEY   | REPLACE_ME         | AWS S3 Secret Access Key                                                |
+| AWS_S3_REGION              | REPLACE_ME         | AWS S3 Bucket Region                                                    |
+| WEBHOOK_SECRET             | REPLACE_ME         | Secret to use when sending webhooks                                     |
+| WEBHOOK_URL                | REPLACE_ME         | URL to send webhooks to when generation is complete                     |
+| PARALLELISM                | 4                  | How many parallel renders per worker                                    |
+| POLL_INTERVAL              | 100                | Time interval, in ms, to check the database for new jobs to process     |
+| RENDER_EVENT               | 'DOMContentLoaded' | Event to signify the page is ready for pdf capture                      |
+| RENDER_EVENT_ELEMENT       | 'body'             | Element which receive the render event                                  |
+| RENDER_EVENT_TIMEOUT       | 1                  | Time, in ms, to wait for the render event before forcing capture anyway |
+
 
 Set `DEBUG` Config var to `pdf:*` to get debugged output.

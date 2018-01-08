@@ -49,6 +49,18 @@
       "description": "Time interval, in ms, to check the database for new jobs to process",
       "value": "100"
     },
+    "RENDER_EVENT": {
+      "description": "Event to signify the page is ready for pdf ",
+      "value": "DOMContentLoaded"
+    },
+    "RENDER_EVENT_ELEMENT": {
+      "description": "Element which receive the render event",
+      "value": "body"
+    },
+    "RENDER_EVENT_TIMEOUT": {
+      "description": "Time, in ms, to wait for the render event before forcing capture anyway",
+      "value": "1"
+    },
     "NODE_ENV": {
       "description": "node env",
       "value": "production"
