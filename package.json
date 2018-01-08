@@ -6,7 +6,7 @@
     "start": "pdf-bot -c ./pdf-printer.config.js api"
   },
   "dependencies": {
-    "pdf-bot": "git://github.com/danielwestendorf/pdf-bot.git"
+    "pdf-bot": "^0.5.4"
   },
   "devDependencies": {},
   "repository": {
