@@ -35,7 +35,7 @@
     },
     "WEBHOOK_SECRET": {
       "description": "Secret to use when sending webhooks",
-      "value": "REPLACE_ME"
+      "generator": "secret"
     },
     "WEBHOOK_URL": {
       "description": "URL to send webhooks to when generation is complete",
@@ -50,8 +50,8 @@
       "value": "100"
     },
     "RENDER_TIMER": {
-      "description": "ime, in ms, to wait before pdf capture",
-      "value": "DOMContentLoaded"
+      "description": "Time, in ms, to wait before pdf capture",
+      "value": "1000"
     },
     "NODE_ENV": {
       "description": "node env",
