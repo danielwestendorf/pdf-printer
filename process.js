@@ -88,11 +88,12 @@ function processJob(job, configuration) {
 
   return queue.processJob(generator, job, configuration.webhook).then((response) => {
     if (error.isError(response)) {
-      console.error(response.message)
+      console.error('Job ID ' + job.id + ' failed to process.')
+      debug(response);
+      return Promise.reject(response);
     } else {
       console.log('Job ID ' + job.id + ' was processed.')
+      return Promise.resolve(true);
     }
-
-    return Promise.resolve(true);
   });
 }
