@@ -11,6 +11,7 @@
   "scripts": {
     "postdeploy": "pdf-bot db:migrate -c pdf-bot.config.js"
   },
+  "stack": "heroku-16",
   "repository": "https://github.com/danielwestendorf/pdf-printer",
   "env": {
     "API_TOKEN": {
